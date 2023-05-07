@@ -1,6 +1,7 @@
 {
   "name": "a04-cheestov",
   "version": "1.0.0",
+  "type": "module",
   "description": "setting up an API",
   "main": "server.js",
   "scripts": {
