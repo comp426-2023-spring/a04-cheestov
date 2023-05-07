@@ -25,6 +25,12 @@ api.get("app/rpsls/", (req, res, next) => {
 });
 
 api.get("app/rps/play/", (req, res) => {
+    const response = rps(req.query.shot);
+    res.status(200).send(response);
+});
+
+api.post("app/rps/play", (req, res) => {
     const response = rps(req.body.shot);
     res.status(200).send(response);
 });
+
