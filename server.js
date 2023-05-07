@@ -57,3 +57,7 @@ api.get("app/rpsls/play/:shot/", (req, res) => {
 api.use(function(req, res) {
     res.status(404).json({"message":"404 NOT FOUND"});
 });
+
+api.listen(port, () => {
+    console.log('Server listening on port ${port');
+});
