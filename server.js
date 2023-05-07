@@ -16,6 +16,15 @@ api.get("/app/", (req, res, next) => {
 
 api.get("app/rps", (req, res, next) => {
     const response = rps();
-    res.status(200).json({player});
+    res.status(200).json({response});
 });
 
+api.get("app/rpsls/", (req, res, next) => {
+    const response = rpsls();
+    res.status(200).json({response});
+});
+
+api.get("app/rps/play/", (req, res) => {
+    const response = rps(req.body.shot);
+    res.status(200).send(response);
+});
