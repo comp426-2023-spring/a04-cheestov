@@ -37,10 +37,14 @@ api.post("app/rps/play", (req, res) => {
 api.get('/app/rpsls/play', (req, res) => {
     const response = rpsls(req.query.shot);
     res.status(200).send(player);
-})
+});
 
 api.post("/app/rpsls/play", (req, res) => {
     const response = rpsls(req.body.shot);
     res.status(200).send(response);
-})
+});
 
+api.get("/app/rps/play/:shot/", (req, res) => {
+    const response = rps(req.params.shot);
+    res.status(200).send(response);
+});
