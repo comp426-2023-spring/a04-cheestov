@@ -36,7 +36,7 @@ api.post("app/rps/play", (req, res) => {
 
 api.get('/app/rpsls/play', (req, res) => {
     const response = rpsls(req.query.shot);
-    res.status(200).send(player);
+    res.status(200).send(response);
 });
 
 api.post("/app/rpsls/play", (req, res) => {
@@ -59,5 +59,5 @@ api.use(function(req, res) {
 });
 
 api.listen(port, () => {
-    console.log('Server listening on port ${port');
+    console.log('Server listening on port ${port}');
 });
