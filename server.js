@@ -48,3 +48,12 @@ api.get("/app/rps/play/:shot/", (req, res) => {
     const response = rps(req.params.shot);
     res.status(200).send(response);
 });
+
+api.get("app/rpsls/play/:shot/", (req, res) => {
+    const response = rpsls(req.params.shot);
+    res.status(200).send(response);
+});
+
+api.use(function(req, res) {
+    res.status(404).json({"message":"404 NOT FOUND"});
+});
