@@ -8,7 +8,8 @@ const api = express();
 api.use(express.json());
 
 const args = minimist(process.argv.slice(2));
-const port = args.port || 5000;
+const PORT = args.port || 5000;
+console.log(PORT);
 
 api.get("/app/", (req, res, next) => {
     res.status(200).json({"message":"200 OK"});
@@ -58,6 +59,6 @@ api.use(function(req, res) {
     res.status(404).json({"message":"404 NOT FOUND"});
 });
 
-api.listen(port, () => {
-    console.log('Server listening on port ${port}');
+api.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
 });
